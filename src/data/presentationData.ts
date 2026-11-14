@@ -19,7 +19,7 @@ export interface PortfolioItem {
   id: string;
   reelId: string;
   url: string;
-  category: 'retail' | 'tourism' | 'restaurants';
+  category: 'retail' | 'tourism' | 'restaurants' | 'sports' | 'commercial';
   titleEn: string;
   titleAr: string;
   descriptionEn: string;
@@ -120,6 +120,20 @@ export interface PresentationData {
   };
   socialStats: SocialStat[];
   portfolioCategories: {
+    commercial: {
+      titleEn: string;
+      titleAr: string;
+      descriptionEn: string;
+      descriptionAr: string;
+      items: PortfolioItem[];
+    };
+    sports: {
+      titleEn: string;
+      titleAr: string;
+      descriptionEn: string;
+      descriptionAr: string;
+      items: PortfolioItem[];
+    };
     retail: {
       titleEn: string;
       titleAr: string;
@@ -174,9 +188,9 @@ export const presentationData: PresentationData = {
     },
     contact: {
       email: "info@pro-media.com",
-      whatsapp: "https://wa.me/201283925658?text=Hello%20ProMedia%20Team%2C%20I%20am%20interested%20in%20an%20advertising%20partnership%20with%20ElZuzzat",
-      whatsappNumber: "01283925658",
-      whatsappInternational: "+20 128 392 5658",
+      whatsapp: "https://wa.me/201110070072?text=Hello%20ProMedia%20Team%2C%20I%20am%20interested%20in%20an%20advertising%20partnership%20with%20ElZuzzat",
+      whatsappNumber: "+20 11 10070072",
+      whatsappInternational: "+20 11 10070072",
       salesOfficeEn: "ProMedia Official Partnerships Representation",
       salesOfficeAr: "التمثيل التجاري والشراكات الحصرية — بروميديا",
     }
@@ -291,6 +305,257 @@ export const presentationData: PresentationData = {
     }
   ],
   portfolioCategories: {
+    commercial: {
+      titleEn: "Commercial Advertisements & Brand Campaigns",
+      titleAr: "الحملات والإعلانات التجارية (إعلانات مازن)",
+      descriptionEn: "High-production commercial spots and digital brand campaigns engineered by Mazen & ElZuzzat to elevate brand stature and consumer recall.",
+      descriptionAr: "إعلانات تجارية وتلفزيونية ورقمية رفيعة المستوى تم ابتكارها وتنفيذها بواسطة مازن والزوزات لترسيخ مكانة العلامات التجارية.",
+      items: [
+        {
+          id: "commercial-1",
+          reelId: "Db8x1HOtRhB",
+          url: "https://www.instagram.com/reel/Db8x1HOtRhB/?exln=M2FwcWl4Y3piNXY5",
+          category: "commercial",
+          thumbnailUrl: "/assets/thumbnails/commercial/commercial-1.jpg",
+          titleEn: "Commercial Production — Ad Campaign 01",
+          titleAr: "إنتاج إعلاني تجاري — حملة مازن 01",
+          descriptionEn: "High-concept commercial campaign directed with cinematic storytelling and brand integration.",
+          descriptionAr: "حملة إعلانية متميزة بفكرة إبداعية مبتكرة وإخراج تجاري يرسخ رسالة العلامة.",
+          highlightEn: "Commercial Directing",
+          highlightAr: "إنتاج وإخراج إعلاني"
+        },
+        {
+          id: "commercial-2",
+          reelId: "DcTOJ6SNZCh",
+          url: "https://www.instagram.com/reel/DcTOJ6SNZCh/?rpxt=MWZ5NmN1amJlMWJ5cQ==",
+          category: "commercial",
+          thumbnailUrl: "/assets/thumbnails/commercial/commercial-2.jpg",
+          titleEn: "Brand Activation Commercial 02",
+          titleAr: "إعلان تجاري لعلامة رائدة 02",
+          descriptionEn: "Dynamic commercial activation highlighting product benefits with memorable punchlines.",
+          descriptionAr: "إعلان حيوي يبرز مزايا المنتج بقالب كوميدي سريع يعلق في أذهان الجمهور.",
+          highlightEn: "High Brand Recall",
+          highlightAr: "ترسيخ اسم المنتج"
+        },
+        {
+          id: "commercial-3",
+          reelId: "Dcb2S3oRdos",
+          url: "https://www.instagram.com/reel/Dcb2S3oRdos/?srtk=MWowaTdxcjd5c2I0bg==",
+          category: "commercial",
+          thumbnailUrl: "/assets/thumbnails/commercial/commercial-3.jpg",
+          titleEn: "Creative Commercial Spot 03",
+          titleAr: "إسكتش إعلاني تسويقي 03",
+          descriptionEn: "Engaging commercial spot blending comedy and direct call-to-action for the featured brand.",
+          descriptionAr: "عمل إعلاني يدمج بين الفكاهة الذكية والدعوة المباشرة لتجربة خدمات العلامة.",
+          highlightEn: "Direct Conversion",
+          highlightAr: "تحفيز اتخاذ القرار"
+        },
+        {
+          id: "commercial-4",
+          reelId: "Dc_v8lGxoUD",
+          url: "https://www.instagram.com/reel/Dc_v8lGxoUD/?mdxt=MXF6ZnY4MDByNm5uZg==",
+          category: "commercial",
+          thumbnailUrl: "/assets/thumbnails/commercial/commercial-4.jpg",
+          titleEn: "Major Brand Sponsorship Feature 04",
+          titleAr: "رعاية وإعلان تجاري مميز 04",
+          descriptionEn: "Tailored brand storytelling executed with high production values and creative scriptwriting.",
+          descriptionAr: "قصة إعلانية مكتوبة باحترافية وجودة إنتاجية عالية تخدم أهداف الحملة التسويقية.",
+          highlightEn: "Premium Production",
+          highlightAr: "جودة تصوير وإنتاج عالية"
+        },
+        {
+          id: "commercial-5-duplicate",
+          reelId: "Dc_v8lGxoUD",
+          url: "https://www.instagram.com/reel/Dc_v8lGxoUD/?mdxt=MXF6ZnY4MDByNm5uZg==",
+          category: "commercial",
+          thumbnailUrl: "/assets/thumbnails/commercial/commercial-4.jpg",
+          titleEn: "Major Brand Sponsorship Feature (Tracking Variant)",
+          titleAr: "رعاية وإعلان تجاري مميز (رابط تتبع إضافي)",
+          descriptionEn: "Alternate tracking parameter URL preserved for reference.",
+          descriptionAr: "رابط التتبع الإضافي المحفوظ للمرجعية.",
+          highlightEn: "Tracking Variant",
+          highlightAr: "رابط تتبع إضافي",
+          isDuplicate: true
+        },
+        {
+          id: "commercial-5",
+          reelId: "DdHT8mytvMa",
+          url: "https://www.instagram.com/reel/DdHT8mytvMa/?cplk=NHB6cXVwdTBhNmpi",
+          category: "commercial",
+          thumbnailUrl: "/assets/thumbnails/commercial/commercial-5.jpg",
+          titleEn: "Digital Launch Campaign 05",
+          titleAr: "إعلان إطلاق وتسويق رقمي 05",
+          descriptionEn: "Viral commercial launch driving exponential reach and immediate consumer buzz.",
+          descriptionAr: "حملة إطلاق إعلاني حققت انتشاراً واسعاً وأثارت تفاعلاً جماهيرياً كبيراً.",
+          highlightEn: "Viral Launch Velocity",
+          highlightAr: "سرعة انتشار قياسية"
+        },
+        {
+          id: "commercial-6",
+          reelId: "DYSgeFeNRpk",
+          url: "https://www.instagram.com/reel/DYSgeFeNRpk/?dlrf=MWhjdHBmNTl6bWllNA==",
+          category: "commercial",
+          thumbnailUrl: "/assets/thumbnails/commercial/commercial-6.jpg",
+          titleEn: "Product Storytelling Commercial 06",
+          titleAr: "إعلان تجاري وسيناريو إبداعي 06",
+          descriptionEn: "Clever situational comedy centering the brand as the natural hero of the daily scenario.",
+          descriptionAr: "موقف كوميدي يومي يجعل العلامة التجارية هي البطل والحل الأمثل.",
+          highlightEn: "Relatable Creative Concept",
+          highlightAr: "فكرة إبداعية قريبة للجمهور"
+        },
+        {
+          id: "commercial-7",
+          reelId: "DUUAbkuDZBO",
+          url: "https://www.instagram.com/reel/DUUAbkuDZBO/?exln=eXc0dmRzamo1bWZj",
+          category: "commercial",
+          thumbnailUrl: "/assets/thumbnails/commercial/commercial-7.jpg",
+          titleEn: "Promotional Offer Spotlight 07",
+          titleAr: "حملة إعلانية وترويجية كبرى 07",
+          descriptionEn: "Fast-paced promotional ad designed to maximize clicks, shares, and seasonal sales.",
+          descriptionAr: "إعلان ترويجي بإيقاع سريع مصمم لتعظيم المشاركات والمبيعات الموسمية.",
+          highlightEn: "Sales Promotion Driver",
+          highlightAr: "محفز للمبيعات والطلب"
+        },
+        {
+          id: "commercial-8",
+          reelId: "DTYOHTZjRY6",
+          url: "https://www.instagram.com/reel/DTYOHTZjRY6/?cplk=MWt4OTV6Nmlocnp2Ng==",
+          category: "commercial",
+          thumbnailUrl: "/assets/thumbnails/commercial/commercial-8.jpg",
+          titleEn: "Brand Ambassador Commercial 08",
+          titleAr: "إعلان تمثيل العلامة التجارية 08",
+          descriptionEn: "Seamless ambassador-style commercial creating high trust and social proof.",
+          descriptionAr: "إعلان يعكس ثقة صناع المحتوى في المنتج ويبني مصداقية فورية مع المتابعين.",
+          highlightEn: "Trust & Credibility",
+          highlightAr: "بناء ثقة ومصداقية"
+        },
+        {
+          id: "commercial-9",
+          reelId: "DRh-ACfDSeg",
+          url: "https://www.instagram.com/reel/DRh-ACfDSeg/?mdxt=eG4zNDk3amRnMGR3",
+          category: "commercial",
+          thumbnailUrl: "/assets/thumbnails/commercial/commercial-9.jpg",
+          titleEn: "Creative Commercial Skit 09",
+          titleAr: "إسكتش تجاري فكاهي 09",
+          descriptionEn: "Signature humor adapted specifically for brand messaging without compromising entertainment value.",
+          descriptionAr: "فكاهة راقية مخصصة لخدمة أهداف الإعلان دون الإخلال بالقيمة الترفيهية.",
+          highlightEn: "High Shareability",
+          highlightAr: "معدل مشاركة مرتفع"
+        },
+        {
+          id: "commercial-10",
+          reelId: "DQ9_yJ7DbmW",
+          url: "https://www.instagram.com/reel/DQ9_yJ7DbmW/?vrfl=MWI3dDVwZTczcnNqag==",
+          category: "commercial",
+          thumbnailUrl: "/assets/thumbnails/commercial/commercial-10.jpg",
+          titleEn: "Signature Commercial Film 10",
+          titleAr: "فيلم إعلاني قصير 10",
+          descriptionEn: "Polished short-form commercial production with crisp editing, sound design, and acting.",
+          descriptionAr: "عمل إعلاني قصير متقن في التصوير والمونتاج والأداء التمثيلي الاحترافي.",
+          highlightEn: "Art Direction & Sound",
+          highlightAr: "إتقان إخراجي وصوتي"
+        },
+        {
+          id: "commercial-11",
+          reelId: "DNv6D_s2vSy",
+          url: "https://www.instagram.com/reel/DNv6D_s2vSy/?obrf=cXJzdmxod2F2ejQ=",
+          category: "commercial",
+          thumbnailUrl: "/assets/thumbnails/commercial/commercial-11.jpg",
+          titleEn: "Major Brand Milestone Commercial 11",
+          titleAr: "حملة إعلانية احتفالية 11",
+          descriptionEn: "Large-scale celebratory commercial production delivering emotional impact and brand pride.",
+          descriptionAr: "إنتاج إعلاني ضخم يجمع بين البهجة والتأثير الإيجابي واسع النطاق.",
+          highlightEn: "Emotional Impact",
+          highlightAr: "تأثير شعوري إيجابي"
+        }
+      ]
+    },
+    sports: {
+      titleEn: "Sports & Fitness Showcases",
+      titleAr: "الرياضة واللياقة والأنشطة البدنية",
+      descriptionEn: "High-energy sports showdowns, athletic training routines, fitness lifestyle, and sportswear brand collaborations reaching millions of active youth.",
+      descriptionAr: "تحديات رياضية حماسية، تدريبات لياقة بدنية، استعراض لنمط الحياة الرياضي والملابس الرياضية بجاذبية جماهيرية واسعة لجيل الشباب.",
+      items: [
+        {
+          id: "sports-1",
+          reelId: "DcPBRshOQxk",
+          url: "https://www.instagram.com/reel/DcPBRshOQxk/?rpxt=MW8wa2k0OGFmaTk5bw==",
+          category: "sports",
+          thumbnailUrl: "/assets/thumbnails/sports/sports-1.jpg",
+          titleEn: "Athletic & Fitness Challenge 01",
+          titleAr: "تحدي اللياقة والأنشطة الرياضية 01",
+          descriptionEn: "High-energy athletic workout challenge and duo fitness rivalry driving massive comments.",
+          descriptionAr: "تحدي بدني رياضي حماسي ومنافسة ممتعة بين الثنائي تحفز تفاعل الجماهير ومحبي الرياضة.",
+          highlightEn: "Athletic High Energy",
+          highlightAr: "طاقة رياضية وحماس"
+        },
+        {
+          id: "sports-2",
+          reelId: "Dcb-qnDISy6",
+          url: "https://www.instagram.com/reel/Dcb-qnDISy6/?obrf=MWR1NHFwMXJxemJ6bg==",
+          category: "sports",
+          thumbnailUrl: "/assets/thumbnails/sports/sports-2.jpg",
+          titleEn: "Sports Performance & Agility Showdown",
+          titleAr: "منافسة الرشاقة والأداء الرياضي",
+          descriptionEn: "Dynamic sports agility exercises combined with humorous commentary and viral appeal.",
+          descriptionAr: "تمارين رشاقة وسرعة رياضية بروح مرحة تجمع بين الحماس واللياقة البدنية العالية.",
+          highlightEn: "Agility & Viral Engagement",
+          highlightAr: "تفاعل وسرعة انتشار"
+        },
+        {
+          id: "sports-3",
+          reelId: "DfdG9FbuGer",
+          url: "https://www.instagram.com/reel/DfdG9FbuGer/?vrfl=MXhhOXpyeGEzb3NtZA==",
+          category: "sports",
+          thumbnailUrl: "/assets/thumbnails/sports/sports-3.jpg",
+          titleEn: "Gym Activation & Strength Challenge",
+          titleAr: "تحدي القوة وتمارين الجيم الحماسية",
+          descriptionEn: "Intense fitness center routine and strength test inspiring young gym enthusiasts.",
+          descriptionAr: "روتين رياضي حماسي داخل صالة الألعاب الرياضية يحفز الشباب على ممارسة التمارين.",
+          highlightEn: "Fitness Motivation",
+          highlightAr: "تحفيز اللياقة والشباب"
+        },
+        {
+          id: "sports-4",
+          reelId: "Dc1kLZZusdo",
+          url: "https://www.instagram.com/reel/Dc1kLZZusdo/?srtk=MWpwd3AzNmo2bWQ0Ng",
+          category: "sports",
+          thumbnailUrl: "/assets/thumbnails/sports/sports-4.jpg",
+          titleEn: "Active Sports Lifestyle Showcase",
+          titleAr: "أسلوب الحياة الرياضي والنشاط البدني",
+          descriptionEn: "Promoting healthy active living and sportswear integration through relatable duo banter.",
+          descriptionAr: "ترويج لنمط الحياة الصحي والملابس الرياضية بأسلوب شبابي جذاب وترفيهي.",
+          highlightEn: "Active Lifestyle Focus",
+          highlightAr: "نمط حياة صحي ورياضي"
+        },
+        {
+          id: "sports-5",
+          reelId: "DeucJNxxnih",
+          url: "https://www.instagram.com/reel/DeucJNxxnih/?vrfl=MXhvaGZ6emgzY2p5dQ==",
+          category: "sports",
+          thumbnailUrl: "/assets/thumbnails/sports/sports-5.jpg",
+          titleEn: "Outdoor Match & Sporting Rivalry",
+          titleAr: "مباراة ميدانية ومنافسة كروية مشوقة",
+          descriptionEn: "Exciting outdoor sports match capturing peak rivalry, goals, and spontaneous reactions.",
+          descriptionAr: "مباراة رياضية ميدانية ومنافسة ممتعة تعكس الشغف الكروي والتفاعل التلقائي.",
+          highlightEn: "Match Highlights Appeal",
+          highlightAr: "حماس وإثارة رياضية"
+        },
+        {
+          id: "sports-6",
+          reelId: "Dd9cvq3RNF2",
+          url: "https://www.instagram.com/reel/Dd9cvq3RNF2/?vrfl=MXA0OTV2dmM1M29rMQ==",
+          category: "sports",
+          thumbnailUrl: "/assets/thumbnails/sports/sports-6.jpg",
+          titleEn: "Champion Spirit & Sports Challenge",
+          titleAr: "روح البطولة والتحدي الرياضي",
+          descriptionEn: "Climactic sports showdown showcasing dedication, skills, and audience entertainment.",
+          descriptionAr: "تحدي رياضي ختامي يبرز المهارات العالية والروح التنافسية المبهجة.",
+          highlightEn: "Peak Audience Retention",
+          highlightAr: "معدل مشاهدة واستبقاء عالٍ"
+        }
+      ]
+    },
     retail: {
       titleEn: "Retail & Commercial Showcases",
       titleAr: "التجزئة والعلامات التجارية",

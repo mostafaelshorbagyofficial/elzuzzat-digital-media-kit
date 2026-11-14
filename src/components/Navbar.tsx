@@ -20,13 +20,11 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, onToggleLang, onOpenContac
     { id: 'promedia', num: '01', labelEn: 'ProMedia', labelAr: 'بروميديا' },
     { id: 'overview', num: '02', labelEn: 'Meet ElZuzzat', labelAr: 'عن الزوزات' },
     { id: 'meet', num: '03', labelEn: 'Creator Story', labelAr: 'قصة الثنائي' },
-    { id: 'social', num: '04', labelEn: 'Social Presence', labelAr: 'الحضور الرقمي' },
-    { id: 'retail', num: '05', labelEn: 'Retail', labelAr: 'التجزئة' },
-    { id: 'tourism', num: '06', labelEn: 'Tourism', labelAr: 'السياحة' },
-    { id: 'restaurants', num: '07', labelEn: 'Restaurants', labelAr: 'المطاعم' },
-    { id: 'opportunities', num: '08', labelEn: 'Opportunities', labelAr: 'فرص الإعلان' },
-    { id: 'packages', num: '09', labelEn: 'Packages', labelAr: 'الباقات' },
-    { id: 'contact', num: '10', labelEn: 'Contact', labelAr: 'تواصل معنا' },
+    { id: 'social', num: '04', labelEn: 'Social Velocity', labelAr: 'الحضور الرقمي' },
+    { id: 'portfolio', num: '05', labelEn: 'Portfolio', labelAr: 'معرض الأعمال' },
+    { id: 'opportunities', num: '06', labelEn: 'Opportunities', labelAr: 'فرص الإعلان' },
+    { id: 'packages', num: '07', labelEn: 'Packages', labelAr: 'الباقات والأسعار' },
+    { id: 'contact', num: '08', labelEn: 'Contact', labelAr: 'تواصل معنا' },
   ];
 
   useEffect(() => {

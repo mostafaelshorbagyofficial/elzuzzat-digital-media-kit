@@ -104,10 +104,10 @@ export const AgencyIntro: React.FC<AgencyIntroProps> = ({ lang, onContinue }) =>
             <Building2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
             <div className="text-start">
               <span className="text-xs font-bold text-slate-900 block">
-                {isAr ? 'تغطية 3 قطاعات كبرى' : '3 Core Industry Pillars'}
+                {isAr ? 'تغطية 5 قطاعات كبرى' : '5 Core Industry Pillars'}
               </span>
               <span className="text-[11px] text-slate-500">
-                {isAr ? 'تجزئة • سياحة • مطاعم' : 'Retail • Tourism • Food'}
+                {isAr ? 'إعلانات • رياضة • تجزئة • سياحة • مطاعم' : 'Commercial • Sports • Retail • Tourism • Food'}
               </span>
             </div>
           </div>

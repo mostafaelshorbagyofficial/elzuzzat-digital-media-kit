@@ -8,7 +8,7 @@ Built with React 18, TypeScript, Tailwind CSS, and Vite.
 
 - **Executive Agency Introduction:** Official ProMedia presenting slide with brand credentials.
 - **Creator Showcase:** Authentic visual assets featuring ElZuzzat with comprehensive audience velocity data (200M+ Quarterly Views).
-- **Interactive Portfolio Galleries:** Curated campaigns across **Retail**, **Tourism**, and **Restaurants** with authentic Instagram Reel thumbnails and embedded playback modal.
+- **Interactive Portfolio Galleries:** Curated campaigns across **Commercial Brand Ads**, **Sports & Fitness**, **Retail**, **Tourism**, and **Restaurants** (32+ verified Reels) with authentic Instagram thumbnails and embedded playback modal.
 - **Sponsorship Opportunities:** Brand integration tiers and content formats.
 - **Official Commercial Packages:**
   - Full Social Media Package (Facebook + Instagram + TikTok) — EGP 300,000

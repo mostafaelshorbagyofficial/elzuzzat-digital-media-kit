@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Film, Play, ExternalLink, Sparkles, ShoppingBag, Palmtree, UtensilsCrossed, Share2, Check } from 'lucide-react';
+import { Film, Play, ExternalLink, Sparkles, ShoppingBag, Palmtree, UtensilsCrossed, Trophy, Megaphone, Share2, Check } from 'lucide-react';
 import { InstagramIcon } from './Icons';
 import type { Language, PortfolioItem } from '../data/presentationData';
 import { presentationData } from '../data/presentationData';
@@ -10,7 +10,7 @@ interface PortfolioProps {
 }
 
 export const Portfolio: React.FC<PortfolioProps> = ({ lang, onSelectReel }) => {
-  const [activeCategory, setActiveCategory] = useState<'all' | 'retail' | 'tourism' | 'restaurants'>('all');
+  const [activeCategory, setActiveCategory] = useState<'all' | 'commercial' | 'sports' | 'retail' | 'tourism' | 'restaurants'>('all');
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const isAr = lang === 'ar';
   const { portfolioCategories } = presentationData;
@@ -22,12 +22,18 @@ export const Portfolio: React.FC<PortfolioProps> = ({ lang, onSelectReel }) => {
     setTimeout(() => setCopiedId(null), 2000);
   };
 
+  const allCommercial = portfolioCategories.commercial?.items.filter(item => !item.isDuplicate) || [];
+  const allSports = portfolioCategories.sports?.items.filter(item => !item.isDuplicate) || [];
   const allRetail = portfolioCategories.retail.items;
   const allTourism = portfolioCategories.tourism.items;
   const allRestaurants = portfolioCategories.restaurants.items.filter(item => !item.isDuplicate);
 
   const getFilteredItems = (): PortfolioItem[] => {
     switch (activeCategory) {
+      case 'commercial':
+        return allCommercial;
+      case 'sports':
+        return allSports;
       case 'retail':
         return allRetail;
       case 'tourism':
@@ -36,14 +42,19 @@ export const Portfolio: React.FC<PortfolioProps> = ({ lang, onSelectReel }) => {
         return allRestaurants;
       case 'all':
       default:
-        return [...allRetail, ...allTourism, ...allRestaurants];
+        return [...allCommercial, ...allSports, ...allRetail, ...allTourism, ...allRestaurants];
     }
   };
 
   const currentItems = getFilteredItems();
+  const totalCount = allCommercial.length + allSports.length + allRetail.length + allTourism.length + allRestaurants.length;
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
+      case 'commercial':
+        return <Megaphone className="w-3.5 h-3.5 text-purple-600" />;
+      case 'sports':
+        return <Trophy className="w-3.5 h-3.5 text-blue-600" />;
       case 'retail':
         return <ShoppingBag className="w-3.5 h-3.5 text-[#E24A4A]" />;
       case 'tourism':
@@ -57,6 +68,10 @@ export const Portfolio: React.FC<PortfolioProps> = ({ lang, onSelectReel }) => {
 
   const getCategoryColor = (category: string) => {
     switch (category) {
+      case 'commercial':
+        return 'border-purple-200 text-purple-700 bg-purple-50';
+      case 'sports':
+        return 'border-blue-200 text-blue-700 bg-blue-50';
       case 'retail':
         return 'border-[#E24A4A]/20 text-[#E24A4A] bg-red-50';
       case 'tourism':
@@ -70,12 +85,15 @@ export const Portfolio: React.FC<PortfolioProps> = ({ lang, onSelectReel }) => {
 
   return (
     <section 
-      id="retail" 
+      id="portfolio" 
       className="py-20 lg:py-32 bg-slate-50/70 border-t border-b border-slate-200 relative overflow-hidden"
       dir={isAr ? 'rtl' : 'ltr'}
     >
-      <div id="tourism" className="absolute top-1/3" />
-      <div id="restaurants" className="absolute top-2/3" />
+      <div id="retail" className="absolute top-0" />
+      <div id="commercial" className="absolute top-0" />
+      <div id="sports" className="absolute top-1/4" />
+      <div id="tourism" className="absolute top-1/2" />
+      <div id="restaurants" className="absolute top-3/4" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -92,8 +110,8 @@ export const Portfolio: React.FC<PortfolioProps> = ({ lang, onSelectReel }) => {
 
           <p className="text-base sm:text-lg text-slate-600">
             {isAr 
-              ? 'محتوى إبداعي متخصص يغطي قطاعات التجزئة، السياحة، وتجارب المطاعم بنجاحات موثقة.' 
-              : 'Creative content across Retail, Tourism, and Restaurants with verified viral performance.'}
+              ? 'محتوى إبداعي متخصص يغطي الحملات الإعلانية، الرياضة واللياقة، التجزئة، السياحة، وتجارب المطاعم بنجاحات موثقة.' 
+              : 'Creative content across Commercial Ads, Sports, Retail, Tourism, and Restaurants with verified viral performance.'}
           </p>
         </div>
 
@@ -112,8 +130,34 @@ export const Portfolio: React.FC<PortfolioProps> = ({ lang, onSelectReel }) => {
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             <span>{isAr ? 'كافة القطاعات' : 'All Categories'}</span>
             <span className="text-[11px] px-1.5 py-0.5 rounded-md bg-white/20 font-bold">
-              15
+              {totalCount}
             </span>
+          </button>
+
+          {/* Commercial Ads */}
+          <button
+            onClick={() => setActiveCategory('commercial')}
+            className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 min-h-[44px] touch-manipulation ${
+              activeCategory === 'commercial'
+                ? 'bg-purple-600 text-white shadow-md shadow-purple-600/25'
+                : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 shadow-xs'
+            }`}
+          >
+            <Megaphone className="w-3.5 h-3.5 text-purple-600 activeCategory === 'commercial' ? 'text-white' : ''" />
+            <span>{isAr ? `إعلانات تجارية (${allCommercial.length})` : `Commercial Ads (${allCommercial.length})`}</span>
+          </button>
+
+          {/* Sports */}
+          <button
+            onClick={() => setActiveCategory('sports')}
+            className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 min-h-[44px] touch-manipulation ${
+              activeCategory === 'sports'
+                ? 'bg-blue-600 text-white shadow-md shadow-blue-600/25'
+                : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 shadow-xs'
+            }`}
+          >
+            <Trophy className="w-3.5 h-3.5 text-blue-600 activeCategory === 'sports' ? 'text-white' : ''" />
+            <span>{isAr ? `رياضة ولياقة (${allSports.length})` : `Sports & Fitness (${allSports.length})`}</span>
           </button>
 
           {/* Retail */}
@@ -126,7 +170,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ lang, onSelectReel }) => {
             }`}
           >
             <ShoppingBag className="w-3.5 h-3.5 text-[#E24A4A]" />
-            <span>{isAr ? 'التجزئة والتسوق (5)' : 'Retail (5)'}</span>
+            <span>{isAr ? `التجزئة والتسوق (${allRetail.length})` : `Retail (${allRetail.length})`}</span>
           </button>
 
           {/* Tourism */}
@@ -139,7 +183,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ lang, onSelectReel }) => {
             }`}
           >
             <Palmtree className="w-3.5 h-3.5 text-emerald-300" />
-            <span>{isAr ? 'السياحة والوجهات (6)' : 'Tourism (6)'}</span>
+            <span>{isAr ? `السياحة والوجهات (${allTourism.length})` : `Tourism (${allTourism.length})`}</span>
           </button>
 
           {/* Restaurants */}
@@ -152,7 +196,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ lang, onSelectReel }) => {
             }`}
           >
             <UtensilsCrossed className="w-3.5 h-3.5 text-amber-300" />
-            <span>{isAr ? 'المطاعم والضيافة (4)' : 'Restaurants (4)'}</span>
+            <span>{isAr ? `المطاعم والضيافة (${allRestaurants.length})` : `Restaurants (${allRestaurants.length})`}</span>
           </button>
 
         </div>
